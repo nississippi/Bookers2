@@ -1,8 +1,8 @@
-<h1>Books#show</h1>
-
+<h1>Books detail</h1>
+<%= image_tag @book.get_image %>
 <%= @book.title %>
 <%= @book.body %>
-<%= @book.user.name %>
+<%= link_to @book.user.name, user_path(@book.user.id) %>
 
 <% if @book.user == current_user %>
   <%= link_to "edit", edit_book_path(@book) %>

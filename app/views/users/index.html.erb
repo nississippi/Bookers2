@@ -1,3 +1,11 @@
+<h1>Users info</h1>
+<div>
+  <%= image_tag current_user.get_profile_image %>
+  <%= current_user.name %>
+  <%= current_user.introduction %>
+  <%= link_to "UserEdit", edit_user_path(current_user.id) %>
+</div>
+
 <h1>New book</h1>
   <%= form_with model: @book do |f| %>
     <%= f.label :title %><br />

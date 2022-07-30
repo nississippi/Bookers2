@@ -11,5 +11,6 @@
       <%= book.title %>
       <%= book.body %>
       <%= book.user.name %>
+      <%= image_tag book.user.get_profile_image %>
     </div>
   <% end %>

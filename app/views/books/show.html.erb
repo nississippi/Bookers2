@@ -3,17 +3,17 @@
     <div class="row">
       <div class="col-md-3">
         <h2>User info</h2>
-        <%= image_tag current_user.get_profile_image %>
+        <%= image_tag @showbook.user.get_profile_image %>
         <table class="table">
           <tbody>
             <tr></tr>
             <tr>
               <th>name</th>
-              <th><%= current_user.name %></th>
+              <th><%= @showbook.user.name %></th>
             </tr>
             <tr>
               <th>introduction</th>
-              <th><%= current_user.introduction %></th>
+              <th><%= @showbook.user.introduction %></th>
             </tr>
           </tbody>
         </table>
@@ -41,16 +41,16 @@
           <tbody>
             <tr>
               <td>
-                <%= link_to user_path(@book.user.id) do %>
-                  <%= image_tag @book.get_image %>
+                <%= link_to user_path(@showbook.user.id) do %>
+                  <%= image_tag @showbook.get_image %>
                 <% end %><br>
-                <%= link_to @book.user.name, user_path(@book.user.id) %>
+                <%= link_to @showbook.user.name, user_path(@showbook.user.id) %>
               </td>
-              <td><%= link_to @book.title, book_path(@book.id) %></td>
-              <td><%= @book.body %></td>
-              <% if @book.user == current_user %>
-                <td><%= link_to "edit", edit_book_path(@book), class:"btn btn-sm btn-success" %></td>
-                <td><%= link_to "destroy", book_path(@book), method: :delete, class:"btn btn-sm btn-danger" %></td>
+              <td><%= link_to @showbook.title, book_path(@showbook.id) %></td>
+              <td><%= @showbook.body %></td>
+              <% if @showbook.user == current_user %>
+                <td><%= link_to "Edit", edit_book_path(@showbook), class:"btn btn-sm btn-success" %></td>
+                <td><%= link_to "Destroy", book_path(@showbook), method: :delete, class:"btn btn-sm btn-danger" %></td>
               <% end %>
             </tr>
           </tbody>

@@ -52,7 +52,12 @@
         </div>
       </nav>
     </header>
+    <!-- :pでクラスを定義-->
+    <% flash.each do |key, value| %>
+      <%= content_tag(:p, value, class: "#{key}") %>
+    <% end %>
     <%= yield %>
+
     <footer>
       <div class ="container mt-5">
         <div class ="row">
